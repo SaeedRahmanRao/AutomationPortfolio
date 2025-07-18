@@ -7,6 +7,7 @@ import ExperienceTimeline from "@/components/experience-timeline"
 import SkillsGrid from "@/components/skills-grid"
 import ProjectCard from "@/components/project-card"
 import ThemeToggle from "@/components/theme-toggle"
+import { BubbleChat } from 'flowise-embed-react'
 
 export default function Home() {
   return (
@@ -130,7 +131,8 @@ export default function Home() {
                   { name: "GHL", icon: "Flag" },
                   { name: "HubSpot", icon: "AtSign" },
                   { name: "Voiceflow", icon: "MessageSquare" },
-                  { name: "Flowsie", icon: "Flow" },
+                  { name: "Vapi", icon: "Phone" },     
+                  { name: "MCP", icon: "Settings" },
                 ]}
               />
             </TabsContent>
@@ -323,3 +325,4 @@ export default function Home() {
     </main>
   )
 }
+

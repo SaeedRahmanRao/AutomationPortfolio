@@ -1,4 +1,5 @@
 import type React from "react"
+import Image, { StaticImageData } from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import {
   AtSign,
@@ -24,11 +25,13 @@ import {
   Workflow,
   Flag,
   Zap,
+  Phone,      // Added for Vapi
+  Settings,   // Added for MCP
 } from "lucide-react"
 
 interface SkillProps {
   name: string
-  icon: string
+  icon: string | StaticImageData // <-- Allow both string and imported image
 }
 
 interface SkillsGridProps {
@@ -61,6 +64,8 @@ export default function SkillsGrid({ skills }: SkillsGridProps) {
     Workflow: <Workflow className="h-6 w-6" />,
     Flag: <Flag className="h-6 w-6" />,
     Zap: <Zap className="h-6 w-6" />,
+    Phone: <Phone className="h-6 w-6" />,         // Added for Vapi
+    Settings: <Settings className="h-6 w-6" />,   // Added for MCP
   }
 
   return (
@@ -71,7 +76,19 @@ export default function SkillsGrid({ skills }: SkillsGridProps) {
           className="overflow-hidden border-muted transition-all hover:shadow-md hover:border-primary/20"
         >
           <CardContent className="p-6 flex flex-col items-center text-center">
-            <div className="rounded-full p-3 bg-muted mb-3">{iconMap[skill.icon]}</div>
+            <div className="rounded-full p-3 bg-muted mb-3">
+              {typeof skill.icon !== "string" ? (
+                <Image
+                  src={skill.icon}
+                  alt={skill.name}
+                  width={36}
+                  height={36}
+                  className="object-contain"
+                />
+              ) : (
+                iconMap[skill.icon] || null
+              )}
+            </div>
             <p className="font-medium">{skill.name}</p>
           </CardContent>
         </Card>
