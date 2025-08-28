@@ -2,6 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Blog-specific styles */
+.prose {
+  @apply text-foreground;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold mt-8 mb-4 text-foreground;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold mt-6 mb-3 text-foreground;
+}
+
+.prose h4 {
+  @apply text-lg font-medium mt-4 mb-2 text-foreground;
+}
+
+.prose p {
+  @apply mb-4 text-muted-foreground leading-relaxed;
+}
+
+.prose ul {
+  @apply mb-4 pl-6 text-muted-foreground;
+}
+
+.prose ol {
+  @apply mb-4 pl-6 text-muted-foreground;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose strong {
+  @apply font-semibold text-foreground;
+}
+
+.prose a {
+  @apply text-primary hover:underline;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-primary pl-4 italic text-muted-foreground my-4;
+}
+
+.prose code {
+  @apply bg-muted px-1 py-0.5 rounded text-sm font-mono;
+}
+
+.prose pre {
+  @apply bg-muted p-4 rounded-lg overflow-x-auto my-4;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

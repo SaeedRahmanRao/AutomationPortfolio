@@ -6,43 +6,11 @@ import ContactForm from "@/components/contact-form"
 import ExperienceTimeline from "@/components/experience-timeline"
 import SkillsGrid from "@/components/skills-grid"
 import ProjectCard from "@/components/project-card"
-import ThemeToggle from "@/components/theme-toggle"
 import { BubbleChat } from 'flowise-embed-react'
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
-      {/* Navbar */}
-      <nav className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-sm">
-        <div className="container flex h-16 items-center justify-between">
-          <a href="#" className="text-xl font-bold">
-            Saeed<span className="text-primary">.</span>
-          </a>
-          <div className="hidden md:flex items-center space-x-6">
-            <a href="#about" className="hover:text-primary transition-colors">
-              About
-            </a>
-            <a href="#experience" className="hover:text-primary transition-colors">
-              Experience
-            </a>
-            <a href="#skills" className="hover:text-primary transition-colors">
-              Skills
-            </a>
-            {/* <a href="#projects" className="hover:text-primary transition-colors">
-              Projects
-            </a> */}
-            <a href="#contact" className="hover:text-primary transition-colors">
-              Contact
-            </a>
-          </div>
-          <div className="flex items-center space-x-4">
-            <ThemeToggle />
-            <Button asChild size="sm">
-              <a href="#contact">Let's Connect</a>
-            </Button>
-          </div>
-        </div>
-      </nav>
 
       {/* Hero Section */}
       <section className="container py-20 md:py-32 flex flex-col items-center justify-center text-center">
