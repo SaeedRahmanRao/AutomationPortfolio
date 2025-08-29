@@ -50,7 +50,7 @@ export default function MobileNav() {
               className="block py-2 hover:text-primary transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Blog
+              Blogs
             </a>
             <a 
               href="#contact" 

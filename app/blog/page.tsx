@@ -54,7 +54,7 @@ export default function BlogPage() {
         <div className="container py-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold">Blog</h1>
+              <h1 className="text-3xl font-bold">Blogs</h1>
               <p className="text-muted-foreground mt-2">
                 Insights on automation, AI, and modern development practices
               </p>

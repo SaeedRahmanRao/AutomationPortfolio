@@ -155,7 +155,7 @@ export default function Home() {
         </div>
       </section>
 
-      /*{/* Projects Section
+      {/* Projects Section
       <section id="projects" className="py-20">
         <div className="container">
           <h2 className="text-3xl font-bold mb-8">Projects</h2>

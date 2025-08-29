@@ -2,10 +2,20 @@
 
 import { Button } from "@/components/ui/button"
 import ThemeToggle from "@/components/theme-toggle"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isSmallUp, setIsSmallUp] = useState(false)
+
+  // Ensure correct rendering after hydration to prevent flicker
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 640px)")
+    const update = () => setIsSmallUp(mediaQuery.matches)
+    update()
+    mediaQuery.addEventListener("change", update)
+    return () => mediaQuery.removeEventListener("change", update)
+  }, [])
 
   return (
     <>
@@ -17,31 +27,36 @@ export default function Navbar() {
           </a>
           
           {/* Desktop Navigation */}
-          <div className="items-center space-x-6">
-            <a href="/#about" className="hover:text-primary transition-colors">
-              About
-            </a>
-            <a href="/#experience" className="hover:text-primary transition-colors">
-              Experience
-            </a>
-            <a href="/#skills" className="hover:text-primary transition-colors">
-              Skills
-            </a>
-            <a href="/blog" className="hover:text-primary transition-colors">
-              Blog
-            </a>
-            <a href="/#contact" className="hover:text-primary transition-colors">
-              Contact
-            </a>
-          </div>
+          {isSmallUp && (
+            <div className="flex items-center space-x-6">
+              <a href="/#about" className="hover:text-primary transition-colors">
+                About
+              </a>
+              <a href="/#experience" className="hover:text-primary transition-colors">
+                Experience
+              </a>
+              <a href="/#skills" className="hover:text-primary transition-colors">
+                Skills
+              </a>
+              <a href="/blog" className="hover:text-primary transition-colors">
+                Blogs
+              </a>
+              <a href="/#contact" className="hover:text-primary transition-colors">
+                Contact
+              </a>
+            </div>
+          )}
 
           <div className="flex items-center space-x-4">
             <ThemeToggle />
-            <Button asChild size="sm" className="inline-flex">
-              <a href="/#contact">Let's Connect</a>
-            </Button>
+            {isSmallUp && (
+              <Button asChild size="sm" className="inline-flex">
+                <a href="/#contact">Let's Connect</a>
+              </Button>
+            )}
             {/* Mobile Menu Button */}
-            <div className="md:hidden">
+            {!isSmallUp && (
+            <div>
               <Button
                 variant="ghost"
                 size="sm"
@@ -52,13 +67,14 @@ export default function Navbar() {
                 </svg>
               </Button>
             </div>
+            )}
           </div>
         </div>
       </nav>
 
       {/* Mobile Navigation */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden border-b bg-background/95 backdrop-blur-sm">
+      {!isSmallUp && isMobileMenuOpen && (
+        <div className="border-b bg-background/95 backdrop-blur-sm">
           <div className="container py-4 space-y-3">
             <a 
               href="/#about" 
