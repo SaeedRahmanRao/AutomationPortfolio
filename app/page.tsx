@@ -7,6 +7,28 @@ import ExperienceTimeline from "@/components/experience-timeline"
 import SkillsGrid from "@/components/skills-grid"
 import ProjectCard from "@/components/project-card"
 import { BubbleChat } from 'flowise-embed-react'
+import n8nLogo from "@/public/logos/n8n.png"
+import zapierLogo from "@/public/logos/zapier.png"
+import makeLogo from "@/public/logos/make.png"
+import gumloopLogo from "@/public/logos/gumloop.png"
+import flowiseLogo from "@/public/logos/Flowise.png"
+import ghlLogo from "@/public/logos/ghl.png"
+import hubspotLogo from "@/public/logos/hubspot.png"
+import voiceflowLogo from "@/public/logos/voiceflow.png"
+import synthesiaLogo from "@/public/logos/synthesia.png"
+import runwayLogo from "@/public/logos/runway.jpg"
+import heygenLogo from "@/public/logos/heygen.png"
+import reactLogo from "@/public/logos/react.png"
+import nextLogo from "@/public/logos/nextjs.png"
+import tailwindLogo from "@/public/logos/tailwind.png"
+import nodeLogo from "@/public/logos/node.png"
+import prismaLogo from "@/public/logos/prisma.png"
+import mongodbLogo from "@/public/logos/mongodb.png"
+import firebaseLogo from "@/public/logos/firebase.png"
+import vapiLogo from "@/public/logos/vapi.png"
+import mcpLogo from "@/public/logos/mcp.png"
+import expressLogo from "@/public/logos/express.png"
+import sqlLogo from "@/public/logos/sql.png"
 
 export default function Home() {
   return (
@@ -91,16 +113,16 @@ export default function Home() {
             <TabsContent value="automation" className="mt-4">
               <SkillsGrid
                 skills={[
-                  { name: "n8n", icon: "Workflow" },
-                  { name: "Zapier", icon: "Zap" },
-                  { name: "Make", icon: "Link" },
-                  { name: "Gumloop", icon: "Circle" },
-                  { name: "Flowise", icon: "Workflow" },
-                  { name: "GHL", icon: "Flag" },
-                  { name: "HubSpot", icon: "AtSign" },
-                  { name: "Voiceflow", icon: "MessageSquare" },
-                  { name: "Vapi", icon: "Phone" },     
-                  { name: "MCP", icon: "Settings" },
+                  { name: "n8n", icon: n8nLogo },
+                  { name: "Zapier", icon: zapierLogo },
+                  { name: "Make", icon: makeLogo },
+                  { name: "Gumloop", icon: gumloopLogo },
+                  { name: "Flowise", icon: flowiseLogo },
+                  { name: "GHL", icon: ghlLogo },
+                  { name: "HubSpot", icon: hubspotLogo },
+                  { name: "Voiceflow", icon: voiceflowLogo },
+                  { name: "Vapi", icon: vapiLogo },     
+                  { name: "MCP", icon: mcpLogo },
                 ]}
               />
             </TabsContent>
@@ -108,9 +130,9 @@ export default function Home() {
             <TabsContent value="content" className="mt-4">
               <SkillsGrid
                 skills={[
-                  { name: "Synthesia", icon: "Video" },
-                  { name: "Runway", icon: "Film" },
-                  { name: "Heygen", icon: "Camera" },
+                  { name: "Synthesia", icon: synthesiaLogo },
+                  { name: "Runway", icon: runwayLogo },
+                  { name: "Heygen", icon: heygenLogo },
                 ]}
               />
             </TabsContent>
@@ -118,9 +140,9 @@ export default function Home() {
             <TabsContent value="frontend" className="mt-4">
               <SkillsGrid
                 skills={[
-                  { name: "React.js", icon: "Code" },
-                  { name: "Next.js", icon: "Code" },
-                  { name: "Tailwind CSS", icon: "Paintbrush" },
+                  { name: "React.js", icon: reactLogo },
+                  { name: "Next.js", icon: nextLogo },
+                  { name: "Tailwind CSS", icon: tailwindLogo },
                 ]}
               />
             </TabsContent>
@@ -128,12 +150,12 @@ export default function Home() {
             <TabsContent value="backend" className="mt-4">
               <SkillsGrid
                 skills={[
-                  { name: "Node.js", icon: "Server" },
-                  { name: "Express", icon: "Server" },
-                  { name: "MongoDB", icon: "Database" },
-                  { name: "Prisma", icon: "Database" },
-                  { name: "SQL", icon: "Database" },
-                  { name: "Firebase", icon: "Flame" },
+                  { name: "Node.js", icon: nodeLogo },
+                  { name: "Express", icon: expressLogo },
+                  { name: "MongoDB", icon: mongodbLogo },
+                  { name: "Prisma", icon: prismaLogo },
+                  { name: "SQL", icon: sqlLogo },
+                  { name: "Firebase", icon: firebaseLogo },
                 ]}
               />
             </TabsContent>
